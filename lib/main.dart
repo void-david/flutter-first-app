@@ -50,7 +50,7 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('A void a idea:'),
+              Text('Random word generator:',),
               BigCard(pair: pair),
               ElevatedButton(
                 onPressed: () {
@@ -79,13 +79,18 @@ class BigCard extends StatelessWidget {
     final theme = Theme.of(context);
     final style = theme.textTheme.displayMedium!.copyWith(
       color: theme.colorScheme.onPrimary,
+
     );
 
     return Card(
       color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20),
-        child: Text(pair.asLowerCase, style: style),
+        child: Text(
+          pair.asLowerCase, 
+          style: style,
+          semanticsLabel: "${pair.first} ${pair.second}",
+          ),
       ),
     );
   }
