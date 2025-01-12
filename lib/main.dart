@@ -53,6 +53,22 @@ class MyAppState extends ChangeNotifier {
 
 // ...
 
+class LayoutTutoPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+      children:[
+        Icon(Icons.face, size: 120),
+        Icon(Icons.face, size: 120),
+        Icon(Icons.face, size: 120),
+      ] 
+      ),
+    );
+  }
+}
+
 class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -111,6 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         page = FavoritesPage();
         break;
+      case 2:
+        page = LayoutTutoPage();
+        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -131,6 +150,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     icon: Icon(Icons.favorite),
                     label: Text('Favorites'),
                   ),
+                  NavigationRailDestination(
+                      icon: Icon(Icons.tram_sharp),
+                      label: Text('Layout tutorial'))
                 ],
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (value) {
