@@ -1,6 +1,5 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -56,15 +55,30 @@ class MyAppState extends ChangeNotifier {
 class LayoutTutoPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-      children:[
-        Icon(Icons.face, size: 120),
-        Icon(Icons.face, size: 120),
-        Icon(Icons.face, size: 120),
-      ] 
-      ),
+    return Column(
+      children: [
+        Expanded(
+          child: ListView(
+            children:[
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+              Icon(Icons.face, size: 120),
+            ]
+          ),
+        ),
+      ],
     );
   }
 }
@@ -123,13 +137,10 @@ class _MyHomePageState extends State<MyHomePage> {
     switch (selectedIndex) {
       case 0:
         page = GeneratorPage();
-        break;
       case 1:
         page = FavoritesPage();
-        break;
       case 2:
         page = LayoutTutoPage();
-        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
